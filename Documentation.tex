@@ -1,0 +1,81 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amsthm,mathtools}
+\usepackage{icomma}
+\usepackage{euscript}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{534B4F}
+\definecolor{urlcolor}{HTML}{6699CC}
+\definecolor{citecolor}{HTML}{e68a00}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor,citecolor=citecolor, colorlinks=true}
+\author{Андрей Волков, София Красова, Алиев Марат}
+\title{Документация и описание процесса}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\part*{Описание методов и классов}
+	\section{Классы}
+	\subsection{CourseGroup}
+	Используется для форматирования JSON в класс.
+	\subsection{CourseList}
+	Используется для форматирования JSON в класс.
+	\subsection{Course}
+	Используется для форматирования JSON в класс.
+	\subsection{Main}
+	
+	
+	\part*{Описание процессов}
+	
+	1
+	
+	В переменную url присваивается ссылка на API.
+	
+	В connection мы формируем запрос к серверу.
+	
+	В переменную in мы получем в читателя(точнее в виде класса читателя(BufferedReader), который помогает считать информацию из потока connection.getInputStream()).
+	
+	После мы создаём StringBuffer, который в разы проще помогает состовлять строки из других строк.
+	
+	Потом мы считываем данные(цикл while ((inputLine = in.readLine()) != null)) и сразу же после считывания закрываем поток.
+	
+	2
+	
+	Создаём переменную типа Gson, которая поможет спарсить JSON. В следующей строке парсим.
+	
+	Создаём список url, который называем requestsById.
+	
+	Создаём список курсов(courses), который называем courses.
+	
+	Из-за lambda создаёи финальную(да без final, но мы её не меняем потом) переменную, finalUrl.
+	
+	Потом при помощи lambda выражения и foreach заполняем requestsById ссылками(так как мы должны сформатировать, мы это делаем через цикл). Помимо этого мы отсеиваем уроки, которые не были выложены.
+	
+	3
+	
+	Проходим циклом по всем запросам
+	
+	Внутри цикла повторяем процесс 1-2 и добавляем в курс список курсов(courses).
+	
+	Повторяем процесс 2-3, но вместо создания requestsById, мы его чистим и слегка меняем данные при заполнении в foreach(можно понять почему, посмотрев на сайте документацию). И вместо списка курсов, мы создаём список в который записваем данные о группе курса.
+	
+	Проходим циклом по всем запросам
+	
+	Внутри цикла повторяем процесс 1-2.
+	
+	После получения массива(благодаря Gson), мы переводим его в список и через foreach+lamda для заполнения данных в Excel мы заполняем список из массивов типа Object.
+	
+	Используем классы из библиотеки Apache.POI.
+	
+	А именно:
+	\begin{enumerate}
+		\item Создаём таблицу.
+		\item Проходя по ранее созданому списку из массивов мы создаём foreach цикл.
+		\item Проходим по массиву из списка и записываем данные в Excel. (перед этим апкастим Object к нужному типу)
+	\end{enumerate}
+\end{document}

@@ -1,0 +1,123 @@
+\documentclass[a4paper, 12pt]{article}
+\usepackage{cmap}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{amsmath,amsfonts,amsthm,mathtools}
+\usepackage{icomma}
+\usepackage{euscript}
+\usepackage{mathrsfs}
+\usepackage{hyperref}
+\usepackage{xcolor}
+\definecolor{linkcolor}{HTML}{534B4F}
+\definecolor{urlcolor}{HTML}{6699CC}
+\definecolor{citecolor}{HTML}{e68a00}
+\hypersetup{pdfstartview=FitH,  linkcolor=linkcolor,urlcolor=urlcolor,citecolor=citecolor, colorlinks=true}
+\author{Андрей Волков, София Красова, Алиев Марат}
+\title{Инструменты используемые на спецпроекте НТИ\cite{NTI}}
+\date{\today}
+
+\begin{document}
+	\maketitle
+	\part{Используемые инструменты}
+	\section{Java\cite{Java}}
+	\subsection{Преимущества:}
+		\begin{enumerate}
+			\item Статическая типизация
+			\item Большое количество библиотек
+			\item JVM\cite{JVM}(другие языки, к примеру работают на JVM\cite{JVM}(Kotlin\cite{Kotlin} самый яркий пример))
+		\end{enumerate}
+
+	\section{SQL\cite{SQL} или NoSQL\cite{NoSQL} или Excel\cite{Excel}}
+	\subsection{Преимущества:}
+		\begin{enumerate}
+			\item Удобный формат хранения
+			\item Легко представлять информацию
+			\item Наличие высокоуровневых библиотек и разных ORM\cite{ORM}(к примеру Android Room\cite{Room})
+		\end{enumerate}
+	\subsection{SQL\cite{SQL}}
+		\subsubsection{Преимущества:}
+			\begin{enumerate}
+				\item Это язык программирования
+				\item Проще всего хранить огромные массивы данных
+			\end{enumerate}
+		\subsubsection{Минусы:}
+		\begin{enumerate}
+			\item Нужно знать язык запросов
+		\end{enumerate}
+	
+	\subsubsection{NoSQL\cite{NoSQL}}
+		\subsubsection{Преимущества:}
+			\begin{enumerate}
+				\item Формат хранения JSON\cite{JSON}(из-за чего его легко читать)
+			\end{enumerate}
+		\subsubsection{Минусы:}
+		\begin{enumerate}
+			\item Мало мест где используют как основной инструмент
+			\item Чуть большая сложность в сравнении с SQL\cite{SQL} при хранении огромных массивов данных
+		\end{enumerate}
+	
+	\subsection{Excel\cite{Excel}}
+		\subsubsection{Преимущества:}
+			\begin{enumerate}
+				\item Популярность(практически каждый знает как пользоваться Excel\cite{Excel})
+				\item Самый красивый GUI\cite{GUI} интерфейс для работы с данными
+			\end{enumerate}
+		\subsubsection{Минусы:}
+			\begin{enumerate}
+				\item Сложность хранения больших массивов данных. (неудобство обработки)
+				\item Проприетарные форматы
+			\end{enumerate}
+	
+	\section{Infogram\cite{Infogram} или JavaFX\cite{JavaFX}(там же JFreeChart\cite{JFreeChart}), или GraphicsView\cite{GraphicsView}(и подобные под Android)}
+	\subsection{Преимущества:}
+		\begin{enumerate}
+			\item Удобство в использовании.
+			\item Красивое графическое представление.
+		\end{enumerate}
+	\subsection{JavaFX\cite{JavaFX}(и JFreeChart\cite{JFreeChart}) и Android библиотеки}
+		\subsubsection{Преимущества:}
+		\begin{enumerate}
+			\item Использование кода для генерации графиков на основе данных.
+			\item Использование меньшего количества инструментов.
+		\end{enumerate}
+		\subsubsection{Минусы:}
+			\begin{enumerate}
+				\item Необходимость знать Java\cite{Java}.
+				\item Лишние зависимости в программу.
+			\end{enumerate}
+	
+	\begin{thebibliography}{9}
+		\bibitem{NTI}
+		\href{https://nti-contest.ru/tracks/olimpiada-dlya-shkolnikov-8-11-klassov/proekt-novoy-sredy-zhizni/tekhnologicheskoe-predprinimatelstvo-spetsproekt/}{НТИ}
+		\bibitem{Java}
+		\href{https://www.java.com/ru/}{Java}
+		\bibitem{JVM}
+		\href{https://ru.wikipedia.org/wiki/Java_Virtual_Machine}{JVM}
+		\bibitem{Kotlin}
+		\href{https://kotlinlang.org/}{Kotlin}
+		\bibitem{SQL}
+		\href{https://ru.wikipedia.org/wiki/SQL}{SQL}
+		\bibitem{NoSQL}
+		\href{https://ru.wikipedia.org/wiki/NoSQL}{NoSQL}
+		\bibitem{Excel}
+		\href{https://www.microsoft.com/ru-ru/microsoft-365/excel}{Excel}
+		\bibitem{ORM}
+		\href{https://ru.bmstu.wiki/ORM_(Object-Relational_Mapping)}{ORM}
+		\bibitem{Room}
+		\href{https://developer.android.com/jetpack/androidx/releases/room}{Android Room}
+		\bibitem{JSON}
+		\href{https://ru.wikipedia.org/wiki/JSON}{JSON}
+		\bibitem{GUI}
+		\href{https://ru.wikipedia.org/wiki/Graphical_user_interface}{GUI}
+		\bibitem{Infogram}
+		\href{https://infogram.com/}{Infogram}
+		\bibitem{JavaFX}
+	
+		\href{https://openjfx.io/}{JavaFX}
+		\bibitem{JFreeChart}
+		\href{https://www.jfree.org/jfreechart/api/javadoc/}{JFreeChart}
+		\bibitem{GraphicsView}
+		\href{http://developer.alexanderklimov.ru/android/simplepaint.php}{GraphicsView}
+	\end{thebibliography}
+\end{document}
